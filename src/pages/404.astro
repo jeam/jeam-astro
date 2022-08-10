@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<Layout title="Jorge Álvarez - Software Developer">
+    <main id="main-content" class="w-full py-24 px-5">
+        <div class="mx-auto text-center">
+            <div class="relative flex flex-col items-center justify-center mb-6">
+                <a href="/" title="Go to home"><img src="/images/jeam.svg" class="w-20 pointer-events-none select-none"
+                        alt="jeam logo" /></a>
+            </div>
+            <div class="mb-3">
+                <h1 class="text-9xl mb-3 font-extrabold font-display">404</h1>
+                <p class="mb-3">:( the content you're looking for perhaps is down below</p>
+            </div>
+            <Nav withSocial />
+        </div>
+    </main>
+</Layout>

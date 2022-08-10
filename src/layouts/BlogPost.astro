@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  post?: object;
+  image?: string;
+}
+
+const { title, description, post, image } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content={image || ""} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@jeam" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="" />
+    <meta name="theme-color" content="#000000" />
+    <title>{title}</title>
+  </head>
+  <body> </body>
+</html>

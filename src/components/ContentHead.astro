@@ -1,0 +1,13 @@
+---
+export interface Props {
+  title: string;
+  excerpt?: string;
+}
+
+const { title, excerpt } = Astro.props as Props;
+---
+
+<div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+  <h1 class=" text-5xl mb-3 font-extrabold font-display">{title}</h1>
+  <p>{excerpt}</p>
+</div>

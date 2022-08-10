@@ -1,0 +1,30 @@
+---
+import Nav from "./Nav.astro";
+
+export interface Props {
+  activeNavItem?: string;
+}
+
+const { activeNavItem } = Astro.props as Props;
+---
+
+<header class="relative">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <div
+      class="flex justify-between items-center py-6 md:justify-start md:space-x-10"
+    >
+      <div class="flex justify-start ">
+        <a href="/" title="Go to home"
+          ><img
+            src="/images/jeam.svg"
+            class="w-20 pointer-events-none select-none"
+            alt="jeam logo"
+          />
+        </a>
+      </div>
+      <div class="flex items-center justify-end md:flex-1 lg:w-0">
+        <Nav active={activeNavItem} />
+      </div>
+    </div>
+  </div>
+</header>

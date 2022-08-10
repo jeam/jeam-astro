@@ -1,0 +1,24 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { title, description, image } = Astro.props as Props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="description" content={description} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@jeam" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta name="theme-color" content="#ccfff9" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link href="http://fonts.cdnfonts.com/css/made-sunflower" rel="stylesheet" />
+<title>{title}</title>
