@@ -8,5 +8,26 @@ import ContentHead from "../components/ContentHead.astro";
   <BlogHeader activeNavItem="about" />
   <main class="relative">
     <ContentHead title="About" />
+    <div class="mb-8"></div>
+    <div class="lg:grid lg:grid-cols-3 max-w-2xl mx-auto px-4 pb-20 sm:px-6 gap-5">
+      <div class="mb-6 lg:mb-0">
+        <img src="/images/jorge.jpeg" alt="Jorge Álvarez" class="w-80 text-center mx-auto rounded-full" />
+      </div>
+      <div class="col-span-2 prose prose-lg">
+        <p>
+          Hi! My name is Jorge Álvarez, I'm a Software Developer from Santiago,
+          Chile. I've worked for different industries the past 10+ years, trying
+          to helping people and companies resolve personal or business related
+          needs through the design and code of software, it can be a simple web
+          like this, or a complex platform that manage a key part of the
+          bussines. Always seeking to create things that help the user reach the
+          goal more easily.
+        </p>
+        <p>
+          If you think we can work together on a project you need, I'll be happy
+          to help you, just <a href="/contact">get in touch</a>.
+        </p>
+      </div>
+    </div>
   </main>
 </Layout>

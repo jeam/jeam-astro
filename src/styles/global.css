@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply bg-celeste text-charleston-green;
+        font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    }
+}
+
+.nav a {
+    @apply inline-block py-1 px-2 relative m-2 rounded -skew-x-3 shadow-md transition-colors text-white bg-spanish-blue;
+}
+
+.nav a:hover,
+.nav .active {
+    @apply text-charleston-green bg-white;
+}

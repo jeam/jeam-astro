@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import BaseHead from "../components/BaseHead.astro";
 export interface Props {
   title: string;
@@ -15,35 +16,13 @@ const {
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} image={image} />
-  </head>
 
-  <body>
-    <slot />
-    <style>
-      :root {
-        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+<head>
+  <BaseHead title={title} description={description} image={image} />
+</head>
 
-        --color-text: #212826;
-        --color-bg: hsl(173, 100%, 90%);
-        --color-border: hsl(17, 24%, 90%);
-        /* --color-feature: #7209b7; */
-        --color-feature: #246eb9;
-      }
+<body>
+  <slot />
+</body>
 
-      html {
-        font-family: system-ui, sans-serif;
-        font-size: var(--font-size-base);
-        color: var(--color-text);
-        background-color: var(--color-bg);
-      }
-
-      body {
-        margin: 0;
-      }
-    </style>
-  </body>
 </html>

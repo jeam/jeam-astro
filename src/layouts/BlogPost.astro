@@ -1,29 +1,54 @@
 ---
+import "../styles/global.css";
+
+import BaseHead from "../components/BaseHead.astro";
+import BlogHeader from "../components/BlogHeader.astro";
+import ContentHead from "../components/ContentHead.astro";
 export interface Props {
-  title: string;
-  description: string;
-  post?: object;
-  image?: string;
+  content: {
+    title: string;
+    description: string;
+    publishDate?: string;
+    heroImage?: {
+      src: string;
+      alt: string;
+    };
+  };
 }
 
-const { title, description, post, image } = Astro.props as Props;
+const {
+  content: { title, description, publishDate, heroImage },
+} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="description" content={description} />
-    <meta name="twitter:image" content={image || ""} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@jeam" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="" />
-    <meta name="theme-color" content="#000000" />
-    <title>{title}</title>
-  </head>
-  <body> </body>
+
+<head>
+  <BaseHead title={title + " - Jorge Álvarez" } description={description} image={heroImage.src} />
+</head>
+
+<body>
+  <BlogHeader activeNavItem="blog" />
+  <main class="relative">
+    <article>
+      <figure class="max-w-4xl mx-auto sm:px-6 grayscale">
+        <img src={heroImage.src} alt={heroImage.alt} />
+      </figure>
+
+      <div class="md:-mt-20 md:bg-celeste md:relative md:z-10 pt-5 max-w-2xl mx-auto rounded-t-lg">
+        <ContentHead title={title} date={publishDate} />
+      </div>
+
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 pb-10 prose prose-lg lg:prose-xl">
+        <slot />
+      </div>
+    </article>
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-10 flex justify-between">
+      <a href="/blog"> ← Back to blog</a>
+      <a href="#top"> Go to top ↑</a>
+    </div>
+  </main>
+</body>
+
 </html>

@@ -13,25 +13,28 @@ const { active, withSocial = false } = Astro.props as Props;
   <a href="/blog" class:list={[{ active: active=="blog" }]}
     title="Where you can read some thoughs about multiple things">Blog
   </a>
-  { withSocial &&
-  <a href="https://github.com/jeam" title="My GitHub account">GitHub</a>
-  <a href="https://twitter.com/jeam" title="My Twitter account">Twitter</a>
-  }
   <a href="/contact" class:list={[{ active: active=="contact" }]}
     title="Do you want to talk, have idea or a project where I can help?">Contact
   </a>
+  {
+  withSocial && (
+  <a href="https://github.com/jeam" title="My GitHub account">
+    GitHub
+  </a>
+  )
+  }
+  {
+  withSocial && (
+  <a href="https://twitter.com/jeam" title="My Twitter account">
+    Twitter
+  </a>
+  )
+  }
+  {
+  withSocial && (
+  <a href="https://www.linkedin.com/in/jorgealvarezm/" title="My LinkedIn account">
+    LinkedIn
+  </a>
+  )
+  }
 </nav>
-
-<style>
-  .nav a {
-    @apply inline-block py-1 px-2 relative m-2 rounded -skew-x-3 shadow-md transition-colors;
-    color: #fff;
-    background: var(--color-feature);
-  }
-
-  .nav a:hover,
-  .nav .active {
-    color: var(--color-bg);
-    background: var(--color-text);
-  }
-</style>
