@@ -24,6 +24,11 @@ const socialImageURL = new URL(image, Astro.url);
 <meta property="og:image" content={socialImageURL} />
 <meta property="og:url" content={canonicalURL} />
 <meta name="theme-color" content="#ccfff9" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<link href="https://fonts.cdnfonts.com/css/made-sunflower" rel="stylesheet" />
+<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<link rel="preload" href="https://fonts.cdnfonts.com/css/made-sunflower" as="style"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/made-sunflower" rel="stylesheet" />
+</noscript>
 <title>{title}</title>
