@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Vue and Nuxt: What's the Difference?"
-description: "Vue and Nuxt are both JavaScript frameworks, the second one build on top of the other."
+description: "Vue and Nuxt are both JavaScript frameworks, the second build on top of the other."
 publishDate: "20 Feb 2023"
 heroImage:
   src: "/images/vue-and-nuxt.jpg"
