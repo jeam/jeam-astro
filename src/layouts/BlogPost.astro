@@ -23,32 +23,38 @@ const {
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <BaseHead
+      title={title + " - Jorge Álvarez"}
+      description={description}
+      image={heroImage.src}
+    />
+  </head>
 
-<head>
-  <BaseHead title={title + " - Jorge Álvarez" } description={description} image={heroImage.src} />
-</head>
+  <body>
+    <BlogHeader activeNavItem="blog" />
+    <main class="relative">
+      <article>
+        <figure class="max-w-4xl mx-auto sm:px-6">
+          <img src={heroImage.src} alt={heroImage.alt} />
+        </figure>
 
-<body>
-  <BlogHeader activeNavItem="blog" />
-  <main class="relative">
-    <article>
-      <figure class="max-w-4xl mx-auto sm:px-6 grayscale">
-        <img src={heroImage.src} alt={heroImage.alt} />
-      </figure>
+        <div
+          class="md:-mt-20 md:bg-celeste md:relative md:z-10 pt-5 max-w-2xl mx-auto rounded-t-lg"
+        >
+          <ContentHead title={title} date={publishDate} />
+        </div>
 
-      <div class="md:-mt-20 md:bg-celeste md:relative md:z-10 pt-5 max-w-2xl mx-auto rounded-t-lg">
-        <ContentHead title={title} date={publishDate} />
+        <div
+          class="max-w-2xl mx-auto px-4 sm:px-6 pb-10 prose prose-lg lg:prose-xl"
+        >
+          <slot />
+        </div>
+      </article>
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 py-10 flex justify-between">
+        <a href="/blog"> ← Back to blog</a>
+        <a href="#top"> Go to top ↑</a>
       </div>
-
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 pb-10 prose prose-lg lg:prose-xl">
-        <slot />
-      </div>
-    </article>
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-10 flex justify-between">
-      <a href="/blog"> ← Back to blog</a>
-      <a href="#top"> Go to top ↑</a>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

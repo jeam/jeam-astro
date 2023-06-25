@@ -8,37 +8,50 @@ export interface Links {
   url: string;
 }
 
-const links: Links[] = [{
-  name: 'Github',
-  url: 'https://github.com/jeam'
-}, {
-  name: 'Twitter',
-  url: 'https://twitter.com/jeam'
-}, {
-  name: 'LinkedIn',
-  url: 'https://www.linkedin.com/in/jorgealvarezm/'
-}];
+const links: Links[] = [
+  {
+    name: "GitHub",
+    url: "https://github.com/jeam",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/jeam",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/jorgealvarezm/",
+  },
+];
 ---
 
 <Layout title="Contact - Jorge Álvarez">
   <BlogHeader activeNavItem="contact" />
   <main class="relative">
-    <ContentHead title="Contact" excerpt="Here are some methods we can get in touch with" />
+    <ContentHead
+      title="Contact"
+      excerpt="Here are some methods we can get in touch with"
+    />
     <div class="mb-8"></div>
-    <div class=" max-w-2xl mx-auto px-4 pb-20 sm:px-6 gap-5 prose prose-lg text-center">
-      <h2 is:raw><a
-          href="javascript:location='mailto:\u006a\u006f\u0072\u0067\u0065\u0040\u006a\u0061\u006c\u0076\u0061\u0072\u0065\u007a\u002e\u0063\u006c';void 0">Drop
-          me an email</a></h2>
+    <div
+      class="max-w-2xl mx-auto px-4 pb-20 sm:px-6 gap-5 prose prose-lg text-center"
+    >
+      <h2 is:raw>
+        <a
+        href="javascript:location='mailto:\u006a\u006f\u0072\u0067\u0065\u0040\u006a\u0061\u006c\u0076\u0061\u0072\u0065\u007a\u002e\u0063\u006c';void
+        0">Drop me an email</a>
+      </h2>
 
       <h2>Links:</h2>
       <ul class="list-none p-0">
-        { links.map((link) => (
-        <li class="p-0">
-          <a href={link.url} title={`My ${link.name} account`}>
-            {link.name}
-          </a>
-        </li>
-        ))}
+        {
+          links.map((link) => (
+            <li class="p-0">
+              <a href={link.url} title={`My ${link.name} account`}>
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </main>

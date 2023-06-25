@@ -4,9 +4,13 @@
 
 @layer base {
     html {
-        @apply bg-celeste text-charleston-green;
+        @apply text-charleston-green;
         font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
     }
+}
+
+html, body {
+  background: #ccfff9;
 }
 
 .nav a {
